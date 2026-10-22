@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Faithful Friend Pet Shop{% endblock %}
+
+{% block content %}
+<!-- Banner Principal -->
+<div class="container mt-5 text-center" style="padding: 60px 0;">
+    <h1 style="font-weight: 800; font-size: 3.5rem;">Everything Your Best Friend Needs.</h1>
+    <p style="color: var(--soft-brown); font-size: 1.2rem; margin-top: 20px;">Premium pet products, gentle grooming, and loving care for every furry family member.</p>
+    <a href="{% url 'product_list' %}" class="btn text-white mt-4 px-4 py-2" style="background-color: var(--sage-green); border-radius: 25px; border: none; font-weight: 600; text-decoration: none;">Explore Our Products</a>
+</div>
+
+<!-- Secção de Categorias -->
+<div class="container mt-5">
+    <h2 class="text-center mb-5 fw-bold">Shop by Category</h2>
+    <div class="row g-4">
+        <!-- Dog Essentials -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=80" alt="Dog" style="height: 200px; object-fit: cover; width: 100%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Dog Essentials</h5>
+                    <p class="card-text text-muted small">Food, collars, toys, and more for dogs.</p>
+                    <a href="{% url 'product_list' %}" class="text-decoration-none" style="color: var(--sage-green); font-weight: 600;">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cat Favorites -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="Cat" style="height: 200px; object-fit: cover; width: 100%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Cat Favorites</h5>
+                    <p class="card-text text-muted small">Food, scratchers, and toys for cats.</p>
+                    <a href="{% url 'product_list' %}" class="text-decoration-none" style="color: var(--sage-green); font-weight: 600;">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Food & Nutrition -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80" alt="Nutrition" style="height: 200px; object-fit: cover; width: 100%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Food & Nutrition</h5>
+                    <p class="card-text text-muted small">Healthy meals and treats for all pets.</p>
+                    <a href="{% url 'product_list' %}" class="text-decoration-none" style="color: var(--sage-green); font-weight: 600;">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Toys & Accessories -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&q=80" alt="Toys" style="height: 200px; object-fit: cover; width: 100%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Toys & Accessories</h5>
+                    <p class="card-text text-muted small">Beds, apparel, and fun interactive toys.</p>
+                    <a href="{% url 'product_list' %}" class="text-decoration-none" style="color: var(--sage-green); font-weight: 600;">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secção de Produtos em Destaque -->
+<div class="container mt-5 pt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold m-0">Featured Products</h2>
+        <a href="{% url 'product_list' %}" class="btn btn-outline-dark" style="border-radius: 20px; font-weight: 600;">View All Products</a>
+    </div>
+    <div class="row g-4">
+        <!-- Produto 1: Premium Dog Food -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Dog Food">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Dog</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Premium Dog Food</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$34.99</p>
+                </div>
+            </div>
+        </div>
+        <!-- Produto 2: Cozy Pet Bed -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Pet Bed">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Accessory</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Cozy Pet Bed</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$42.00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Produto 3: Natural Cat Treats -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Cat Treats">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Cat</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Natural Cat Treats</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$8.99</p>
+                </div>
+            </div>
+        </div>
+        <!-- Produto 4: Adjustable Dog Collar -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Dog Collar">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Dog</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Adjustable Dog Collar</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$14.50</p>
+                </div>
+            </div>
+        </div>
+        <!-- Produto 5: Interactive Cat Toy -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1545529468-42764ef8c85f?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Cat Toy">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Cat</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Interactive Cat Toy</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$12.99</p>
+                </div>
+            </div>
+        </div>
+        <!-- Produto 6: Stainless Steel Bowl -->
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=300&q=80" style="height: 150px; object-fit: cover; border-radius: 10px 10px 0 0;" alt="Steel Bowl">
+                <div class="card-body p-3">
+                    <span class="badge mb-2" style="background-color: var(--sage-green);">Accessory</span>
+                    <h6 class="card-title fw-bold mb-1" style="font-size: 0.95rem;">Stainless Steel Bowl</h6>
+                    <p class="card-text fw-bold" style="color: var(--soft-brown);">$18.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secção de Banho e Tosa (Grooming) -->
+<div class="container mt-5 pt-5 mb-5">
+    <div class="row align-items-center bg-white p-5 shadow-sm" style="border-radius: 20px;">
+        <div class="col-md-6 text-center text-md-start">
+            <h2 class="fw-bold" style="font-size: 2.5rem;">A Little Extra Love and Care.</h2>
+            <p class="mt-3 text-muted" style="font-size: 1.1rem;">Our grooming services are designed to keep your pet clean, comfortable, and looking their very best.</p>
+            <a href="{% url 'grooming' %}" class="btn mt-3 px-4 py-2" style="background-color: var(--dark-green); color: var(--white); border-radius: 25px; font-weight: 600;">Discover Our Grooming Services</a>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&q=80" alt="Dog Grooming" style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</div>
+
+<!-- Secção de Diferenciais -->
+<div class="container mt-5 mb-5">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 bg-white shadow-sm h-100" style="border-radius: 15px;">
+                <div style="font-size: 2.5rem; color: var(--sage-green);">⭐</div>
+                <h5 class="fw-bold mt-3">Quality Products</h5>
+                <p class="text-muted small">Produtos selecionados rigorosamente para o bem-estar e saúde do seu animal.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-white shadow-sm h-100" style="border-radius: 15px;">
+                <div style="font-size: 2.5rem; color: var(--sage-green);">🛁</div>
+                <h5 class="fw-bold mt-3">Gentle Grooming</h5>
+                <p class="text-muted small">Atendimento cuidadoso, focado no conforto e adaptado às necessidades de cada pet.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-white shadow-sm h-100" style="border-radius: 15px;">
+                <div style="font-size: 2.5rem; color: var(--sage-green);">❤️</div>
+                <h5 class="fw-bold mt-3">Personalized Care</h5>
+                <p class="text-muted small">Atenção individualizada para garantir a felicidade de cada animal e do seu tutor.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Secção de Depoimentos -->
+<div class="container mt-5 pt-5 mb-5">
+    <h2 class="text-center fw-bold mb-5">What Our Clients Say</h2>
+    <div class="row g-4">
+        <!-- Depoimento 1 -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                <div class="card-body">
+                    <p class="card-text text-muted">"The grooming service is exceptional! My dog Max always comes back looking amazing and super happy. You can tell they really care."</p>
+                    <div class="mt-3 fw-bold" style="color: var(--dark-green);">Sarah & Max 🐶</div>
+                </div>
+            </div>
+        </div>
+        <!-- Depoimento 2 -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                <div class="card-body">
+                    <p class="card-text text-muted">"I found the best premium food for my cat here. The staff was incredibly helpful and guided me to the perfect choice."</p>
+                    <div class="mt-3 fw-bold" style="color: var(--dark-green);">James & Luna 🐱</div>
+                </div>
+            </div>
+        </div>
+        <!-- Depoimento 3 -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm p-3" style="border-radius: 15px;">
+                <div class="card-body">
+                    <p class="card-text text-muted">"Beautiful store, great prices, and such a warm environment. It really feels like they treat every pet as part of their family."</p>
+                    <div class="mt-3 fw-bold" style="color: var(--dark-green);">Emily & Charlie 🐕</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chamada Final -->
+<div class="container mt-5 mb-5">
+    <div class="text-center p-5 shadow-sm" style="background-color: var(--sage-green); border-radius: 20px;">
+        <h2 class="fw-bold text-white mb-3">Your Pet Deserves Something Special.</h2>
+        <p class="text-white mb-4" style="font-size: 1.1rem; opacity: 0.9;">Visit Faithful Friend and discover a world of care, comfort, and happiness.</p>
+        <a href="{% url 'contact' %}" class="btn px-4 py-2" style="background-color: var(--dark-green); color: var(--white); border-radius: 25px; font-weight: 600; text-decoration: none;">Get in Touch</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Grooming Services | Faithful Friend Pet Shop{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-4 mb-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold" style="font-size: 3rem;">Grooming Services</h1>
+        <p class="text-muted" style="font-size: 1.1rem;">Gentle care to keep your pet looking and feeling their best.</p>
+    </div>
+
+    <!-- Lista de Serviços -->
+    <div class="row g-4 mb-5">
+        <!-- Basic Bath -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center p-3" style="border-radius: 15px;">
+                <h5 class="fw-bold mt-2">Basic Bath</h5>
+                <p class="text-muted small">Shampoo, blow-dry, and brush out.</p>
+                <p class="fw-bold fs-5 mb-0" style="color: var(--soft-brown);">From $25</p>
+            </div>
+        </div>
+        <!-- Full Grooming -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center p-3" style="border-radius: 15px;">
+                <h5 class="fw-bold mt-2">Full Grooming</h5>
+                <p class="text-muted small">Bath, haircut, nail trim, and ear cleaning.</p>
+                <p class="fw-bold fs-5 mb-0" style="color: var(--soft-brown);">From $45</p>
+            </div>
+        </div>
+        <!-- Nail Trimming -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center p-3" style="border-radius: 15px;">
+                <h5 class="fw-bold mt-2">Nail Trimming</h5>
+                <p class="text-muted small">Safe and quick nail clipping.</p>
+                <p class="fw-bold fs-5 mb-0" style="color: var(--soft-brown);">From $12</p>
+            </div>
+        </div>
+        <!-- Puppy Grooming -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center p-3" style="border-radius: 15px;">
+                <h5 class="fw-bold mt-2">Puppy Grooming</h5>
+                <p class="text-muted small">Gentle introduction to grooming.</p>
+                <p class="fw-bold fs-5 mb-0" style="color: var(--soft-brown);">From $30</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Agendamento -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-4 p-md-5" style="border-radius: 20px;">
+                <h3 class="fw-bold text-center mb-4">Book an Appointment</h3>
+                <form method="POST" action="{% url 'grooming' %}">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Owner's Name</label>
+                            <input type="text" name="owner_name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Pet's Name</label>
+                            <input type="text" name="pet_name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Species</label>
+                            <select name="species" class="form-select">
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Service</label>
+                            <select name="service" class="form-select" required>
+                                {% for srv in services %}
+                                    <option value="{{ srv.id }}">{{ srv.name }}</option>
+                                {% empty %}
+                                    <option value="">No services available</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" name="preferred_date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Preferred Time</label>
+                            <input type="time" name="preferred_time" class="form-control" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Important Notes</label>
+                            <textarea name="notes" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn text-white px-5 py-2" style="background-color: var(--dark-green); border-radius: 25px; font-weight: 600;">Request Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

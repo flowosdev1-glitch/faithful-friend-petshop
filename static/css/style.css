@@ -1,0 +1,63 @@
+:root {
+    --verde-salvia: #8FAF8F;
+    --verde-escuro: #294936;
+    --creme: #FAF7F0;
+    --marrom-suave: #B98B67;
+    --branco: #FFFFFF;
+    
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--creme);
+    color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-heading);
+    color: var(--verde-escuro);
+    font-weight: 700;
+}
+
+.navbar {
+    background-color: var(--branco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+    background-color: var(--verde-escuro);
+    border-color: var(--verde-escuro);
+    border-radius: 25px;
+    padding: 10px 24px;
+}
+
+.btn-primary:hover {
+    background-color: var(--marrom-suave);
+    border-color: var(--marrom-suave);
+}
+
+.btn-secondary {
+    background-color: var(--verde-salvia);
+    border: none;
+    border-radius: 25px;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(250, 247, 240, 0.7), rgba(250, 247, 240, 0.7)), url('../img/hero-dog.jpg') center/cover;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    background-color: var(--branco);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
